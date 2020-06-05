@@ -5,7 +5,7 @@
 \title{A function to generate combination of defined number of columns from a given data frame and binds them in rows. Usefult to create files for network analysis
 Takes two values - A data frame from which columns are to be selected and number of columns to select for each set}
 \usage{
-juggling_jaguar(data.df, m = as.integer(2))
+juggling_jaguar(data.df, m = 2)
 }
 \arguments{
 \item{data.df}{a data frame of more than 2 columns}

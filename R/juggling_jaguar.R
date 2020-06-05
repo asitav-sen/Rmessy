@@ -17,13 +17,9 @@
 #' @export
 #' @keywords combination, columns, network
 # juggling jaguar juggles with columns. you need to give the data frame and number of columns to play with.
-juggling_jaguar <- function(data.df, m = as.integer(2)) {
+juggling_jaguar <- function(data.df, m = 2) {
   if (is.data.frame(data.df) == FALSE) {
     stop("error: data frame not supplied")
-  }
-
-  if (is.integer(m) == FALSE) {
-    stop("error: supplied m is not integer")
   }
 
   #get number of columns
