@@ -19,26 +19,22 @@
 # juggling jaguar juggles with columns. you need to give the data frame and number of columns to play with.
 juggling_jaguar <- function(data.df, m = 2) {
   if (is.data.frame(data.df) == FALSE) {
-    print("error: data frame not supplied")
-    exit()
+    stop("error: data frame not supplied")
   }
 
   if (is.integer(m) == FALSE) {
-    print("error: supplied m is not integer")
-    exit()
+    stop("error: supplied m is not integer")
   }
 
   #get number of columns
   n = ncol(data.df)
 
   if (n <= 2) {
-    print("error: number of columns less than or equal to 2")
-    exit()
+    stop("error: number of columns less than or equal to 2")
   }
 
   if (m >= n) {
-    print("error: supplied m is greater than of equal to number of columns")
-    exit()
+    stop("error: supplied m is greater than of equal to number of columns")
   }
 
   #calculate number of combinations
