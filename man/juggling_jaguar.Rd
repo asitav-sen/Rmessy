@@ -4,12 +4,14 @@
 \alias{juggling_jaguar}
 \title{Generates combination of 2 columns from a data frame}
 \usage{
-juggling_jaguar(data.df, rm.na = TRUE)
+juggling_jaguar(data.df, rm.na = TRUE, dedup = TRUE)
 }
 \arguments{
 \item{data.df}{a data frame of more than 2 columns}
 
 \item{rm.na}{is set to true by default. It removes any rows with NA}
+
+\item{dedup}{is set to true by default. It removes an rows where values of both columns are equal}
 }
 \value{
 a data frame with supplied number of column, which is created from the sets by binding

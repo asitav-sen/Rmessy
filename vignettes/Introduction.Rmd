@@ -63,6 +63,6 @@ It calculates the number of possible combination by using binomial coefficient
     \binom{n}{k} = \frac{n!}{k!(n-k)!}
 \]
 Then the function iterates this many times selecting two columns at a time. Then binds them together to return the desired data frame. For binding, it uses function from 'data.table' package.
-Optionally it removes columns with 'NA'. It can be controlled by rm.na
+Optionally it removes columns with 'NA'. It can be controlled by rm.na. By default the function removes rows where values of the variables match. It can be turned off by setting dedup to FALSE.
 
 Feel free to upgrade it further or improve it.
