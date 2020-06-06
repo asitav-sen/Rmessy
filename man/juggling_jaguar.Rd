@@ -2,23 +2,20 @@
 % Please edit documentation in R/juggling_jaguar.R
 \name{juggling_jaguar}
 \alias{juggling_jaguar}
-\title{A function to generate combination of defined number of columns from a given data frame and binds them in rows. Usefult to create files for network analysis
-Takes two values - A data frame from which columns are to be selected and number of columns to select for each set}
+\title{Generates combination of 2 columns from a data frame}
 \usage{
-juggling_jaguar(data.df, m = 2)
+juggling_jaguar(data.df, rm.na = TRUE)
 }
 \arguments{
 \item{data.df}{a data frame of more than 2 columns}
 
-\item{m}{an integer value. Number of columns to select for each set to create. Defaults to 2}
+\item{rm.na}{is set to true by default. It removes any rows with NA}
 }
 \value{
 a data frame with supplied number of column, which is created from the sets by binding
 }
 \description{
-A function to generate combination of defined number of columns from a given data frame and binds them in rows. Usefult to create files for network analysis
-Takes two values - A data frame from which columns are to be selected and number of columns to select for each set
+Generates combination of 2 columns from a data frame
 }
-\keyword{columns,}
-\keyword{combination,}
+\keyword{analysis}
 \keyword{network}

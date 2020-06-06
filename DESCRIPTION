@@ -1,6 +1,6 @@
 Package: Rmessy
 Title: Data manipulation tool for the lazy
-Version: 0.0.0.1000
+Version: 0.0.0.2000
 Authors@R: 
     person(given = "Asitav",
            family = "Sen",
@@ -8,9 +8,13 @@ Authors@R:
            email = "hello@asitavsen.com",
            comment = c(ORCID = "https://orcid.org/0000-0002-5495-7364"))
 Description: A collection of tools in making, for lazy analysts.
-License: GPL-3
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0.9000
-Imports: data.table
+Imports: data.table, stats
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

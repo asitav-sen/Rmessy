@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Rmessy
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of Rmessy is to Help lazy analysts to save some effort and time.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("asitav-sen/Rmessy")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(Rmessy)
+a<-c("A","a")
+b<-c("B","b")
+c<-c("C","c")
+d<-c("D","d")
+
+df<-data.frame(a,b,c,d)
+
+juggling_jaguar(df)
+
+
+
+```
+The function is useful to build files for network analysis which takes relationship values in two columns. However, in real life, data usually don't come in that way. Read the 'Introduction' for further clarity.
+

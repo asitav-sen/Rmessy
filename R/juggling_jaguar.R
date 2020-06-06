@@ -1,36 +1,32 @@
 
-
 .onAttach <- function(juggling_jaguar, Rmessy) {
   packageStartupMessage(
     "Thanks for installing. The package is built for my personal convenience, but feel free to use and improve."
   )
 }
 
-#' A function to generate combination of defined number of columns from a given data frame and binds them in rows. Usefult to create files for network analysis
-#' Takes two values - A data frame from which columns are to be selected and number of columns to select for each set
+#' Generates combination of 2 columns from a data frame
 #' @param data.df a data frame of more than 2 columns
-#' @param m an integer value. Number of columns to select for each set to create. Defaults to 2
+#' @param rm.na is set to true by default. It removes any rows with NA
 #' @return a data frame with supplied number of column, which is created from the sets by binding
 #' @example
-#' df<-data.frame(a= c(1), b= c(2), c= c(3), d= d(4))
-#' juggling_jaguar(df,m=3)
+#' juggling_jaguar(data.frame(a= c(1), b= c(2), c= c(3), d= d(4)),m=3)
 #' @export
-#' @keywords combination, columns, network
+#' @keywords network analysis
 # juggling jaguar juggles with columns. you need to give the data frame and number of columns to play with.
-juggling_jaguar <- function(data.df, m = 2) {
+juggling_jaguar <- function(data.df, rm.na = TRUE) {
   if (is.data.frame(data.df) == FALSE) {
     stop("error: data frame not supplied")
   }
-
   #get number of columns
   n = ncol(data.df)
-
+  m = 2
   if (n <= 2) {
     stop("error: number of columns less than or equal to 2")
   }
 
   if (m >= n) {
-    stop("error: supplied m is greater than of equal to number of columns")
+    stop("error: supplied data frame does not have enough number of columns")
   }
 
   #calculate number of combinations
@@ -54,6 +50,12 @@ juggling_jaguar <- function(data.df, m = 2) {
   }
   #bind the data frames in the list to create a new data frame
   new.data <- data.table::rbindlist(cdata, use.names = FALSE)
+
+  # removing na
+  if (rm.na == TRUE) {
+    new.data <- stats::na.omit(new.data)
+  }
+
   return(new.data)
 
 }

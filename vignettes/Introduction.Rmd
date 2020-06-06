@@ -1,0 +1,68 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+math: true
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# About
+Rmessy is a package usable package under development. It is being developed to help lazy analysts avoid some 'extra' effort. The package can be downloaded from GitHub. Users are welcome to contribute.
+
+The package can be installed using the following code
+
+``` r
+# install.packages("devtools")
+devtools::install_github("asitav-sen/Rmessy")
+```
+
+To start using the package use the following
+```{r setup}
+library(Rmessy)
+```
+
+
+# Functions
+
+## juggling_jaguar
+
+juggling_jaguar is the first function of the package. It helps create data frames for network analysis. Usually relationships in these files are described using two columns. In real life, data is seldom available in this format. Rather it is available in a more complex manner. Example below:
+
+Let's say we want to analyze network of actors, directors and writers from a database of movies. The data is available in following format
+
+| Movie    |   Director   | Actor 1   | Actor 2   | Writer 1   |
+| -----    | ----         | -----     | ----      | ----       |
+| title 1  |  person1     | person5   | person9   | person1    |
+| title 2  |  person2     | person4   | person5   | person10   |
+| title 3  |  person3     | person6   |           | person12   |
+| title 4  |  person1     | person7   | person1   | person13   |
+| title 5  |  person4     | person5   | person2   | person10   |
+
+In order to analyse the network, ideally, we want the data to be in the following format
+
+| colname 1   | colname 2   |
+| ----        | ----        |
+| person 1    | person 2    |
+| person 1    | person 3    |
+ and so one
+
+juggling_jaguar does exactly this transformation.
+
+Please note that the utility may be well beyond network analysis. Basically, the function creates a combination of 2 columns from data frames and binds them together. 
+It calculates the number of possible combination by using binomial coefficient 
+\[
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\]
+Then the function iterates this many times selecting two columns at a time. Then binds them together to return the desired data frame. For binding, it uses function from 'data.table' package.
+Optionally it removes columns with 'NA'. It can be controlled by rm.na
+
+Feel free to upgrade it further or improve it.
