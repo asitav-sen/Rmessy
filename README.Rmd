@@ -29,7 +29,13 @@ You can install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("asitav-sen/Rmessy")
 ```
 
-## Example
+## Functions
+
+### juggling_jaguar
+
+This takes a data frame, creates data frames by selecting combination of two columns then binds them together in rows.
+
+#### Example
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -47,5 +53,25 @@ juggling_jaguar(df)
 
 
 ```
-The function is useful to build files for network analysis which takes relationship values in two columns. However, in real life, data usually don't come in that way. Read the 'Introduction' for further clarity.
+The function is useful to build files for network analysis which takes relationship values in two columns. However, in real life, data usually don't come in that way. Read the 'Vignette' for further clarity.
+
+### mapping_monkey
+
+This takes an igraph file and calculates degree, betweenness, eigen_centrality, edge_density, diameter, farthest_vertices, get_diameter, assortativity.degree and transitivity. Finally, returning a list with the results.
+
+#### Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+
+\dontrun{
+library(Rmessy)
+{
+      mapping_monkey(graphitem, mode="all",norm=TRUE, direc=FALSE, loops=FALSE)
+    }
+
+}
+
+```
 

@@ -66,3 +66,11 @@ Then the function iterates this many times selecting two columns at a time. Then
 Optionally it removes columns with 'NA'. It can be controlled by rm.na. By default the function removes rows where values of the variables match. It can be turned off by setting dedup to FALSE.
 
 Feel free to upgrade it further or improve it.
+
+
+## mapping_monkey
+
+
+mapping_monkey takes an igraph file and calculates degree, betweenness, eigen_centrality, edge_density, diameter, farthest_vertices, get_diameter, assortativity.degree and transitivity. Finally, returning a list with the results.
+
+Some parameters of the individual functions can be controlled by mode, norm, direc and loops which indicate mode, nomalized, direction and loops respectively.
