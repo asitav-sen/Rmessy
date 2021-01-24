@@ -48,7 +48,7 @@ d<-c("D","d")
 
 df<-data.frame(a,b,c,d)
 
-juggling_jaguar(df)
+Rmessy::juggling_jaguar(df)
 
 
 
@@ -63,15 +63,20 @@ This takes an igraph file and calculates degree, betweenness, eigen_centrality, 
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r example, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 
-\dontrun{
-library(Rmessy)
-{
-      mapping_monkey(graphitem, mode="all",norm=TRUE, direc=FALSE, loops=FALSE)
-    }
 
-}
+Rmessy::mapping_monkey(graphitem, mode="all",norm=TRUE, direc=FALSE, loops=FALSE)
 
+
+```
+
+### bestmccplot
+
+Plots Matthews Correlation Coefficient (MCC) against cutoff values.
+
+
+```{r}
+Rmessy::bestmccplot(c(1,0,1,0,1,1,0,0), c(0.2, 0.3, 0.4, 0.5, 0.6, 0.9, 0.3, 0.8))
 ```
 

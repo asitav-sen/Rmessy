@@ -73,11 +73,11 @@ juggling_jaguar <- function(data.df, rm.na = TRUE, dedup= TRUE) {
 
 
 
-.onAttach <- function(mapping_monkey, Rmessy) {
-  packageStartupMessage(
-    "Thanks for installing. The package is built for my personal convenience, but feel free to use and improve."
-  )
-}
+# .onAttach <- function(mapping_monkey, Rmessy) {
+#   packageStartupMessage(
+#     "Thanks for installing. The package is built for my personal convenience, but feel free to use and improve."
+#   )
+# }
 
 #' Calculates network parameters from graph file and returns list of results
 #' @param graphitem an Igraph item
