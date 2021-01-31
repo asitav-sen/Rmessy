@@ -80,3 +80,16 @@ Plots Matthews Correlation Coefficient (MCC) against cutoff values.
 Rmessy::bestmccplot(c(1,0,1,0,1,1,0,0), c(0.2, 0.3, 0.4, 0.5, 0.6, 0.9, 0.3, 0.8))
 ```
 
+### bestmcc
+
+Returns the highest MCC among the all the MCCs calculated at cutoffs between 1% to 100% in sequence of 1%
+
+```{r}
+Rmessy::bestmcc(c(1,0,1,0,1,1,0,0), c(0.2, 0.3, 0.4, 0.5, 0.6, 0.9, 0.3, 0.8))
+```
+
+### Set of modules
+
+A set of modules for use with Shiny apps. These cannot be run without shiny. Kindly go through the introduction file to go through the list.
+You can see them in action as this shiny [dashboard for predictive](https://asitav-sen.shinyapps.io/nitirun/).
+

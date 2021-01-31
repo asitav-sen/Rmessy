@@ -2,10 +2,7 @@
 % Please edit documentation in R/survivalanalysis.R
 \name{bestmccplot}
 \alias{bestmccplot}
-\title{Matthews Correlation Coefficient (MCC) is considered to be a highly robust parameter to evaluate model performance using confusion matrix. At times
-we want to understand at which cutoff point the model performs the best. i.e. say for example you use logistic regression to predict something.
-Then you use a cutoff point (say 0.5) to indicate that anything about the cutoff is TRUE, else false. Often, 0.5 is not the most optimum cutoff.
-This function will plot a graph to show you at which cutoff, the model performs the best. The plot shows cutoff in x axis and MCC in y axis.}
+\title{Plot Matthews Correlation Coefficient (MCC) against cut off.}
 \usage{
 bestmccplot(actual, predicted)
 }
@@ -18,10 +15,7 @@ bestmccplot(actual, predicted)
 a plot with cutoff in x axis and MCC in y axis
 }
 \description{
-Matthews Correlation Coefficient (MCC) is considered to be a highly robust parameter to evaluate model performance using confusion matrix. At times
-we want to understand at which cutoff point the model performs the best. i.e. say for example you use logistic regression to predict something.
-Then you use a cutoff point (say 0.5) to indicate that anything about the cutoff is TRUE, else false. Often, 0.5 is not the most optimum cutoff.
-This function will plot a graph to show you at which cutoff, the model performs the best. The plot shows cutoff in x axis and MCC in y axis.
+Plot Matthews Correlation Coefficient (MCC) against cut off.
 }
 \keyword{Coefficient}
 \keyword{Correlation}

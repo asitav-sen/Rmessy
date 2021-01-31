@@ -33,7 +33,9 @@ library(Rmessy)
 
 # Functions
 
-## juggling_jaguar
+## Network Analysis
+
+### juggling_jaguar
 
 juggling_jaguar is the first function of the package. It helps create data frames for network analysis. Usually relationships in these files are described using two columns. In real life, data is seldom available in this format. Rather it is available in a more complex manner. Example below:
 
@@ -68,14 +70,54 @@ Optionally it removes columns with 'NA'. It can be controlled by rm.na. By defau
 Feel free to upgrade it further or improve it.
 
 
-## mapping_monkey
+### mapping_monkey
 
 
 mapping_monkey takes an igraph file and calculates degree, betweenness, eigen_centrality, edge_density, diameter, farthest_vertices, get_diameter, assortativity.degree and transitivity. Finally, returning a list with the results.
 
 Some parameters of the individual functions can be controlled by mode, norm, direc and loops which indicate mode, normalized, direction and loops respectively.
 
+## Survival Analysis
 
-## bestmccplot
+### bestmccplot
 
-Plot Matthews Correlation Coefficient (MCC) against cutoff values
+Plot Matthews Correlation Coefficient (MCC) against cutoff values. MCC is considered to be a highly robust parameter to evaluate model performance using confusion matrix. At times we want to understand at which cutoff point the model performs the best. i.e. say for example you use logistic regression to predict something. Then you use a cutoff point (say 0.5) to indicate that anything about the cutoff is TRUE, else false. Often, 0.5 is not the most optimum cutoff. This function will plot a graph to show you at which cutoff, the model performs the best. The plot shows cutoff in x axis and MCC in y axis.
+
+### bestmcc
+
+Much like bestmcc plot, this function returns the cutoff (probability) that returns the maximum MCC.
+
+
+## Shiny
+
+In this section, I am creating a set of modules. These reduce my development time of shiny apps. Most of these are actually different types of graphs which I often use. Instead of typing or copying same texts, several times, I can use these modules to perform the same function. I am standardizing these gradually. For e.g. a module that produces a bar chart in plotly, takes a data frame as an input that contains columns with two specific names, etc. At present all the modules are designed to be produced in dark mode. Feel free to add other options.
+
+
+### mod_mainchart and mod_mainchartServer
+
+Plots a plotly bar chart of height "200px". Takes a factor in xaxis and corresponding value in y axis.
+Takes a data frame as input that has 'name' as a columns of factors and 'value' as a column of numbers corresponding to value.
+Also returns value of x axis on plot click.
+
+### mod_linechart and mod_linechartServer
+
+Plots plotly filled line chart (Area chart) of height "200px". Takes 'datetime' in x axis and 'value' in y. Needs dataframe with datetime and value columns. Both need to be numeric, factor or datetime needs to be date/datetime.
+Also returns range of selection (x axis) on the plot.
+
+### mod_linechartnofill and mod_linechartnofillServer
+
+Plots plotly line chart (Not filled) of height "200px". Takes 'datetime' in x axis and 'value' in y. Needs dataframe with datetime and value columns. Both need to be numeric, factor or datetime needs to be date/datetime.
+
+
+### mod_barscatterchart and mod_barscatterchartServer
+
+Plots plotly multi-trace chart with bar and scatter of height "200px". Takes dataframe with a name column (factor) and two value columns (value1 and value2, both numeric).
+
+### mod_horizontalmainchart and mod_horizontalmainchartServer
+
+Plots plotly horizontal bar of height "200px". Takes a dataframe with name and value as input. name should be a factor and value, numeric. Also returns value of y axis on clicking the plot.
+
+### mod_gauge and mod_gaugeServer
+
+Plots gauge plot that shows current value as well as change from last value. Takes current value, last value, maximum value, threshhold value and two other values to create segments in the gauge. Maximum value defines the maximum value in the gauge. Last value is used to calculate the change vis-a-vis current value. Threshold value is used to mark a threshhold on the gauge. Rangevalue1 creates a segment from zero to rangevalue1 as a segment with specific color. Another segment is created between rangevalue1 and rangevalue2 as well.
+

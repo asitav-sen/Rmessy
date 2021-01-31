@@ -13,7 +13,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: data.table, stats, igraph, ModelMetrics
+Imports: data.table, stats, igraph, ModelMetrics, plotly, dplyr, shiny, shinydashboard, shinycssloaders
 Suggests: 
     knitr,
     rmarkdown

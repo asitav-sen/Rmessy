@@ -1,7 +1,4 @@
-#' Matthews Correlation Coefficient (MCC) is considered to be a highly robust parameter to evaluate model performance using confusion matrix. At times
-#' we want to understand at which cutoff point the model performs the best. i.e. say for example you use logistic regression to predict something.
-#' Then you use a cutoff point (say 0.5) to indicate that anything about the cutoff is TRUE, else false. Often, 0.5 is not the most optimum cutoff.
-#' This function will plot a graph to show you at which cutoff, the model performs the best. The plot shows cutoff in x axis and MCC in y axis.
+#' Plot Matthews Correlation Coefficient (MCC) against cut off.
 #' @param actual a vector of actual results from test set
 #' @param predicted a vector of predicted results on test set
 #' @return a plot with cutoff in x axis and MCC in y axis
@@ -47,10 +44,7 @@ bestmccplot <- function(actual, predicted){
 }
 
 
-#' Matthews Correlation Coefficient (MCC) is considered to be a highly robust parameter to evaluate model performance using confusion matrix. At times
-#' we want to understand at which cutoff point the model performs the best. i.e. say for example you use logistic regression to predict something.
-#' Then you use a cutoff point (say 0.5) to indicate that anything about the cutoff is TRUE, else false. Often, 0.5 is not the most optimum cutoff.
-#' This function will provide the highest possible value of MCC for a given model.
+#' Returns the highest MCC among the all the MCCs calculated at cutoffs between 1% to 100% in sequence of 1% .
 #' @param actual a vector of actual results from test set
 #' @param predicted a vector of predicted results on test set
 #' @return Highest MCC value among all MCC values plotted against cutoff values of 0.1 to 1

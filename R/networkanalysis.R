@@ -1,9 +1,9 @@
 
-.onAttach <- function(juggling_jaguar, Rmessy) {
-  packageStartupMessage(
-    "Thanks for installing. The package is built for my personal convenience, but feel free to use and improve."
-  )
-}
+# .onAttach <- function(juggling_jaguar, Rmessy) {
+#   packageStartupMessage(
+#     "Thanks for installing. The package is built for my personal convenience, but feel free to use and improve."
+#   )
+# }
 
 #' Generates combination of 2 columns from a data frame
 #' @param data.df a data frame of more than 2 columns
