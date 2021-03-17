@@ -47,21 +47,16 @@ mod_mainchartServer<- function(id, df, title=""){
             source = id
           ) %>%
           layout(
-            #title= title,
             xaxis = list(title = title, color = "white"),
             yaxis = list(title = "", color = "white"),
             plot_bgcolor = 'transparent',
-            paper_bgcolor = 'transparent'#,
-            #dragmode = "select"
+            paper_bgcolor = 'transparent',
           ) %>% config(displayModeBar = FALSE)
       })
 
       barclick<- reactive({
         d<- event_data("plotly_click", source = id)
         return(d$x)
-        # names<- reorder(df$name,-df$value)
-        # print(clickdata$x)
-        # names[clickdata$x]
       })
       return(barclick())
     }
@@ -191,7 +186,7 @@ mod_gaugeServer<- function(id, value, title="", lastvalue, maxval=500, rangeval1
         plot_ly(
           domain = list(x = c(0, 1), y = c(0, 1)),
           value = value,
-          title = "",#list(text = title),
+          title = "",
           type = "indicator",
           mode = "gauge+number+delta",
           delta = list(reference = lastvalue),
@@ -205,14 +200,11 @@ mod_gaugeServer<- function(id, value, title="", lastvalue, maxval=500, rangeval1
               thickness = 0.75,
               value = threshold)))%>%
           layout(
-            #title= title,
-            #margin = list(l=10,r=5),
             xaxis = list(title = title, color = "white"),
             yaxis = list(title = "", color = "white"),
             plot_bgcolor = 'transparent',
             paper_bgcolor = 'transparent',
             font = list(color = "white")
-            #dragmode = "select"
           ) %>% config(displayModeBar = FALSE)
       })
     }
@@ -269,12 +261,10 @@ mod_horizontalmainchartServer<- function(id, df, title=""){
             source = id
           ) %>%
           layout(
-            #title= title,
             xaxis = list(title = title, color = "white"),
             yaxis = list(title = "", color = "white"),
             plot_bgcolor = 'transparent',
-            paper_bgcolor = 'transparent'#,
-            #dragmode = "select"
+            paper_bgcolor = 'transparent',
           ) %>% config(displayModeBar = FALSE)
       })
 
@@ -345,7 +335,6 @@ mod_barscatterchartServer<- function(id, df, title="", name1="", name2=""){
             name=name2
           )%>%
           layout(
-            #title= title,
             legend = list(orientation = 'h'),
             xaxis = list(title = title, color = "white"),
             yaxis = list(title = "", color = "white"),
@@ -443,12 +432,12 @@ mod_linechartnofillServer<- function(id, df, yaxistitle=""){
 
 
 
-mod_info <- function(id){
-  ns<-NS(id)
-  tagList(
-    withSpinner(infoBoxOutput(ns("infobox"), width=3))
-  )
-}
+# mod_info <- function(id, uniqueid="infobox"){
+#   ns<-NS(id)
+#   tagList(
+#     withSpinner(infoBoxOutput(ns(uniqueid), width=3))
+#   )
+# }
 
 #' Server to produce infobox
 #' @param id an ID wrapped in double quotes that matches the id of the corresponding UI function
@@ -461,27 +450,26 @@ mod_info <- function(id){
 #' @return UI and x axis values (min and max) of selection on plot
 #' @importFrom shiny moduleServer
 #' @importFrom  shinydashboard infobox, renderInfoBox
-#' #' @return UI and yaxis value of the click on the plot
 #' @example
 #'    \donttest{
 #'     mod_infoServer("homepage1stinfobox",value =10, title="Title", colour="red", icon="money", subtitle="subtitle")
 #'       }
 #' @export
-#' @keywords infobox, Shiny
+#' @keywords info box, Shiny
 
-mod_infoServer<- function(id, value, title, colour, icon, subtitle=""){
-  moduleServer(
-    id,
-    function(input,output,session){
-      output$infobox<- renderInfoBox({
-        infoBox(
-          title = title,
-          value = value,
-          icon = icon(icon),
-          color = colour,
-          subtitle = subtitle
-        )
-      })
-    }
-  )
-}
+# mod_infoServer<- function(id, value, title, colour, icon, subtitle=""){
+#   moduleServer(
+#     id,
+#     function(input,output,session){
+#       output$infobox<- renderInfoBox({
+#         shinydashboard::infoBox(
+#           title = title,
+#           value = value,
+#           icon = icon(icon),
+#           color = colour,
+#           subtitle = subtitle
+#         )
+#       })
+#     }
+#   )
+# }
